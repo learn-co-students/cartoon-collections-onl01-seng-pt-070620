@@ -6,17 +6,13 @@ end
 def summon_captain_planet(captain)
   summon = []
   i = 0 
-  captain.collect do |name|
-    summon << "#{name.capitalize}!"
+  captain.collect{|name| summon << "#{name.capitalize}!"}
     i+=1
-  end
 summon
 end
 
 def long_planeteer_calls(name)
-  name.any? do |word|
-    word.length > 4
- end
+  name.any?{|word| word.length > 4}
 end
 
 def find_the_cheese(cheese)
