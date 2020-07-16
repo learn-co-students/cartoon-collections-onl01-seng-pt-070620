@@ -5,28 +5,20 @@ def roll_call_dwarves(array)
 end
 
 def summon_captain_planet(calls)
-  calls.map! {|names| names.capitalize }
-  calls.map! {|names2| names2 = names2 + "!"}
-  return calls
+  calls.map! {|names| names.capitalize! << "!"}
 end
 
 def long_planeteer_calls(wordArray)
-  wordArray.any? do |word|
-    word.length > 4 ? true : false
-  end
+  wordArray.any? { |word| word.length > 4 }
 end 
 
 def find_the_cheese(array)
   cheese_types = ["cheddar", "gouda", "camembert"]
-  found = false
-  array.each{ |new|
-  if cheese_types.include?(new)
-    found = true
-    return new 
+
+  array.find do |new|
+  cheese_types.include?(new)
+
   end
-}
-if found == false 
-  return nil 
-end
-  
+
+
 end
