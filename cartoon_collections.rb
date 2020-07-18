@@ -8,7 +8,8 @@ def summon_captain_planet(planeteer_calls)
   planeteer_calls.collect{|x| "#{x.capitalize}!"} 
 end
 
-def long_planeteer_calls
+def long_planeteer_calls(array)
+  array.any?{|i| i.length > 4}
    
 end
 
@@ -17,7 +18,7 @@ def find_the_cheese(array)
   array.each do |snack|
     cheese_types.find do |cheese|
       return snack if snack == cheese
-      return nil if array.!include?(cheese)
     end
   end
+  nil 
 end
